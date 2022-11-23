@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] float speed, life;
+    [SerializeField] float speed, life, damage;
     Rigidbody2D rb;
     
     private void Awake()
@@ -16,6 +16,15 @@ public class Projectile : MonoBehaviour
     {
         Destroy(gameObject, life);
         rb.AddForce(Vector2.up * speed, ForceMode2D.Impulse);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<EnemyHealth>().TakeHealth(damage);
+            Destroy(gameObject);
+        }
     }
 
 
