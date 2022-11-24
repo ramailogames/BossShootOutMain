@@ -156,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
 
         //shot
         isShooting = true;
-        rb.velocity = Vector2.Lerp(new Vector2(rb.velocity.x, rb.velocity.y), new Vector2(0, 0), Time.deltaTime);
+        rb.velocity = Vector2.Lerp(new Vector2(rb.velocity.x, rb.velocity.y), new Vector2(0, 0), 20 * Time.deltaTime);
         anim.SetTrigger("shoot");
 
     }

@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] float speed, life, damage;
     Rigidbody2D rb;
+    [SerializeField] GameObject destroyVfx;
     
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class Projectile : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<EnemyHealth>().TakeHealth(damage);
+            Instantiate(destroyVfx, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

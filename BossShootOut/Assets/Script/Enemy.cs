@@ -18,11 +18,20 @@ public class Enemy : MonoBehaviour
     [Header("Components")]
     Rigidbody2D rb;
 
+    [Header("Enemy Bullets")]
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform[] shootPositions;
+    [SerializeField] float start_ShootingDealy, repeat_ShootingDelay;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        InvokeRepeating("Shoot", start_ShootingDealy, GameManager.instance.repeatDelay_Enemy_Shoot);
+    }
     public void CheckSurroundings()
     {
         isTouchingWall = Physics2D.OverlapCircle(rightCheckWallPos.position, checkWallRadius, whatIsWall);
@@ -31,7 +40,7 @@ public class Enemy : MonoBehaviour
         {
             Flip();
         }
-       
+
     }
 
     private void Update()
@@ -59,6 +68,17 @@ public class Enemy : MonoBehaviour
     void Shoot()
     {
 
+        StartCoroutine(ShootEnum());
+     
+    }
+
+    IEnumerator ShootEnum()
+    {
+        int index = Random.Range(0, shootPositions.Length);
+        Instantiate(bullet, shootPositions[index].position, Quaternion.identity);
+        yield return new WaitForSeconds(.5f);
+        index = Random.Range(0, shootPositions.Length);
+        Instantiate(bullet, shootPositions[index].position, Quaternion.identity);
     }
 
 
