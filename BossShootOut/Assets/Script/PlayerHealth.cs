@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeHealth(float amount)
     {
-
+        AudioManagerCS.instance.Play("playerhit");
         currentHealth -= amount;
       
         Debug.Log("Player Health = " + currentHealth);

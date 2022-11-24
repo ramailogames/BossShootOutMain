@@ -54,7 +54,7 @@ public class EnemyProjectile : MonoBehaviour
 
 		if (collision.CompareTag("Ground"))
 		{
-
+			AudioManagerCS.instance.Play("groundhit");
 			Instantiate(explosion, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}

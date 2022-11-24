@@ -9,6 +9,7 @@ public class PlayerPowerup : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManagerCS.instance.Play("powerup");
             Instantiate(homingProjectilePrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

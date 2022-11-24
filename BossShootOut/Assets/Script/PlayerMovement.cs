@@ -137,6 +137,8 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+
+        AudioManagerCS.instance.Play("jump");
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
@@ -155,6 +157,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //shot
+
+    
         isShooting = true;
         rb.velocity = Vector2.Lerp(new Vector2(rb.velocity.x, rb.velocity.y), new Vector2(0, 0), 20 * Time.deltaTime);
         anim.SetTrigger("shoot");
@@ -163,6 +167,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void InstanstiateProjectile()
     {
+        AudioManagerCS.instance.Play("shoot");
         Instantiate(projectilePrefab, shootPos.position, Quaternion.identity);
     }
     public void ResetShoot()

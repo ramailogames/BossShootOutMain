@@ -75,9 +75,11 @@ public class Enemy : MonoBehaviour
     IEnumerator ShootEnum()
     {
         int index = Random.Range(0, shootPositions.Length);
+        AudioManagerCS.instance.Play("enemyshoot");
         Instantiate(bullet, shootPositions[index].position, Quaternion.identity);
         yield return new WaitForSeconds(.5f);
         index = Random.Range(0, shootPositions.Length);
+        AudioManagerCS.instance.Play("enemyshoot");
         Instantiate(bullet, shootPositions[index].position, Quaternion.identity);
     }
 
