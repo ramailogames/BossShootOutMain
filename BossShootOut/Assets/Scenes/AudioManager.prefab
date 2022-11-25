@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6762024051571542457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6762024051571542463}
+  - component: {fileID: 6762024051571542456}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6762024051571542463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6762024051571542457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6762024051571542456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6762024051571542457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0712d44462ab3bd44882ee6485c2b00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: shoot
+    clip: {fileID: 8300000, guid: c286b40004cf1e24499254a18a13c29d, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}
+  - name: powerup
+    clip: {fileID: 8300000, guid: 41288e788121db142b0ec15a7d216dfd, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}
+  - name: jump
+    clip: {fileID: 8300000, guid: 61e9aae5f6f7e6343bf356d2e8408000, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}
+  - name: enemyhit
+    clip: {fileID: 8300000, guid: bac92aee179a5e04299d842f29d372ad, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}
+  - name: playerhit
+    clip: {fileID: 8300000, guid: 022ce06cc61a88649b6bb5725c1c6c22, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}
+  - name: groundhit
+    clip: {fileID: 8300000, guid: 4cbdf8a29b5ccd540b65da18ae4f9efd, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}
+  - name: enemyshoot
+    clip: {fileID: 8300000, guid: 0d4b1279d009b8449b0c10e93719a61b, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}
+  - name: theme
+    clip: {fileID: 8300000, guid: 2a34f43da63ad5940bff4452028814d6, type: 3}
+    volume: 0.4
+    pitch: 1
+    isLoop: 1
+    tag: 1
+    source: {fileID: 0}
+  - name: 3
+    clip: {fileID: 8300000, guid: c3f02f3c73f55614cad43c436ca457b7, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}
+  - name: 2
+    clip: {fileID: 8300000, guid: 1f0d4627d9b2a5543a15064e397149fe, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}
+  - name: 1
+    clip: {fileID: 8300000, guid: 98a62a16ae2fe3149a18c08236ef63b9, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}
+  - name: go
+    clip: {fileID: 8300000, guid: 60c0c4a64634ea942a128c84f8092703, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    tag: 0
+    source: {fileID: 0}

@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class RightButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+{
+    // Start is called before the first frame update
+    PlayerMovement movement;
+    void Start()
+    {
+        movement = FindObjectOfType<PlayerMovement>();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        // gameControl.x = -1;
+        movement.movementInputDirection = 1;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        // gameControl.x = 0;
+        movement.movementInputDirection = 0;
+    }
+
+}

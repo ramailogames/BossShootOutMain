@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float movementInputDirection;
+    [HideInInspector]public float movementInputDirection;
 
     private bool isFacingRight = true;
     private bool isMoving = false;
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckInput()
     {
-        movementInputDirection = Input.GetAxisRaw("Horizontal");
+       // movementInputDirection = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -94,10 +94,10 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetMouseButtonDown(0))
+       /* if (Input.GetMouseButtonDown(0))
         {
             Shoot();
-        }
+        }*/
     } 
 
     private void ApplyMovement()
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(0f, 180.0f, 0f);
     }
 
-    void Jump()
+    public void Jump()
     {
         if (!canJump)
         {
@@ -200,7 +200,6 @@ public class PlayerMovement : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheckPos.position, groundRadius);
         }
-     
     }
 
 }
