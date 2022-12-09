@@ -55,12 +55,16 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(1f);
         countDownTxt.text = "Ready..";
         yield return new WaitForSeconds(1f);
+        AudioManagerCS.instance.Play("3");
         countDownTxt.text = "3";
         yield return new WaitForSeconds(.8f);
+        AudioManagerCS.instance.Play("2");
         countDownTxt.text = "2";
         yield return new WaitForSeconds(.8f);
+        AudioManagerCS.instance.Play("1");
         countDownTxt.text = "1";
         yield return new WaitForSeconds(.8f);
+        AudioManagerCS.instance.Play("go");
         countDownTxt.text = "Go...";
         yield return new WaitForSeconds(.8f);
         countDownTxt.gameObject.SetActive(false);

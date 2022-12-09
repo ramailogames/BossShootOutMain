@@ -4,11 +4,17 @@
 	{
 		// call function in index
 		 adBreak({
-        	type: 'preroll',  // ad shows at start of next level
-			name: 'game_started',
-		adBreakDone: (placementInfo) => {},
+        	type: 'next',  // ad shows at start of next level
+			name: 'restart-game',
       		});
+
 		
+		
+	},
+
+	focusReturn: function() // Called by unity from Create Ad Button
+	{
+		window.focus();
 	},
 
 	Alert: function()

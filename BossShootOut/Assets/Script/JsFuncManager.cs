@@ -21,7 +21,14 @@ public class JsFuncManager : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void openAd();
 
-    
+    [DllImport("__Internal")]
+    private static extern void focusReturn();
+
+    public void ReturnFocus()
+    {
+        focusReturn();
+    }
+
     public void CreateAd() // On Create Ad Button
     {
         openAd();
