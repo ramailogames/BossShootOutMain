@@ -4,18 +4,38 @@ using UnityEngine;
 using TMPro;
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject[] enemy;
     [SerializeField] Transform spawnPos;
     [SerializeField] TextMeshProUGUI countDownTxt;
 
-
+    [SerializeField]int currentIndex = 0;
     private void Start()
     {
         StartCoroutine(SpawnEnum());
     }
+
     public void Spawn()
     {
-        Instantiate(enemy, spawnPos.position, Quaternion.identity);
+        switch (currentIndex)
+        {
+            case 0:
+                Instantiate(enemy[0], spawnPos.position, Quaternion.identity);
+                currentIndex = 1;
+                break;
+
+            case 1:
+                Instantiate(enemy[1], spawnPos.position, Quaternion.identity);
+                currentIndex = 2;
+                break;
+
+            case 2:
+                Instantiate(enemy[2], spawnPos.position, Quaternion.identity);
+                currentIndex = 0;
+                break;
+
+        }
+
+       
     }
 
     public void EnumSpawn()

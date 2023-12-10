@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Enemy : MonoBehaviour
 {
     [Header("Check Surrounding")]
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        
         InvokeRepeating("Shoot", start_ShootingDealy, GameManager.instance.repeatDelay_Enemy_Shoot);
     }
     public void CheckSurroundings()

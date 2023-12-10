@@ -7,5 +7,6 @@ public class SubmitScore : MonoBehaviour
     private void OnEnable()
     {
         RamailoGamesApiHandler.SubmitScore(FindObjectOfType<Timer>().playedTime);
+        PlayAndWin.instance.PlayandWinGameOver();
     }
 }

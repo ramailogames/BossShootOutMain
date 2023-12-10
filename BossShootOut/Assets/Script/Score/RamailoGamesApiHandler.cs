@@ -16,10 +16,7 @@ public class RamailoGamesApiHandler : MonoBehaviour
     public static event UnityAction OnScoreUpdate;
 
 
-    private void Awake()
-    {
-        highScore = 0;
-    }
+
     private void Start()
     {
         currentScore = 0;
@@ -34,11 +31,7 @@ public class RamailoGamesApiHandler : MonoBehaviour
     internal static void SubmitScore(float playtime)
     {
         ScoreAPI.SubmitScore(currentScore, (int)playtime, (bool s, string msg) => { });
-       
         Debug.Log("scoreSumbitted");
-        currentScore = 0;
-        highScore = 0;
-       
     }
 
     internal static void AddScore(int amount)
@@ -67,4 +60,5 @@ public class RamailoGamesApiHandler : MonoBehaviour
 
 
 
+   
 }
