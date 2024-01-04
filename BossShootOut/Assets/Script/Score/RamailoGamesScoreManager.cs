@@ -21,8 +21,13 @@ public class RamailoGamesScoreManager : MonoBehaviour
         currentScore = 0;
         playedTime = 0;
 
+        Invoke("FetechData", 0.1f);
+    }
+
+    void FetechData()
+    {
         if (fetch)
-        { 
+        {
             RamailoGamesApiHandler.UpdateHighScore(updateScore);
         }
         else

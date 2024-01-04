@@ -1,4 +1,4 @@
-﻿mergeInto(LibraryManager.library,
+mergeInto(LibraryManager.library,
 {
 	openAd: function() // Called by unity from Create Ad Button
 	{
@@ -16,6 +16,14 @@
 	{
 		window.focus();
 	},
+
+	GetParentURL: function() 
+	{
+		var parentURL = window.parent ? window.parent.location.href : null;
+        return allocate(intArrayFromString(parentURL), 'i8', ALLOC_NORMAL);
+
+    },
+
 
 	Alert: function()
 	{
@@ -41,6 +49,7 @@
 		stringToUTF8(str, buffer, bufferSize);
 		return buffer;
 	},
+
 
 	OpenTab : function(url)
     {
