@@ -1882,7 +1882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a656de10c92aec14eb39cd42e54d9192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUrl: http://localhost:61669/tournament/8/play/122
+  myUrl: 
 --- !u!4 &1115332519
 Transform:
   m_ObjectHideFlags: 0
