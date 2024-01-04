@@ -12,8 +12,8 @@ public class RamailoGamesApiHandler : MonoBehaviour
     public static int currentScore = 0;
 
     public static int highScore = 0;
-   
 
+    string playerHashValue;
     public static event UnityAction OnScoreUpdate;
 
 
@@ -127,7 +127,7 @@ public class RamailoGamesApiHandler : MonoBehaviour
 
         //string url = "http://localhost:61669/tournament/8/play/122/user/userhashvalue";
         int tournamentId = ExtractTournamentId(myUrl);
-        string playerHashValue = ExtractUserHashValue(myUrl);
+        string playerHashValue_ = ExtractUserHashValue(myUrl);
 
         //int tournamentId = ExtractTournamentId(myUrl);
          
@@ -137,8 +137,9 @@ public class RamailoGamesApiHandler : MonoBehaviour
         {
             // Console.WriteLine("Tournament ID: " + tournamentId);
             Debug.Log("Tournament ID: " + tournamentId);
-            Debug.Log("Player has value is: " + playerHashValue);
-            ScoreAPI.instance.playerHashValue = playerHashValue; //set playerHashValue
+            Debug.Log("Player has value is: " + playerHashValue_);
+            ScoreAPI.instance.playerHashValue = playerHashValue_; //set playerHashValue
+            playerHashValue = playerHashValue_;
         }
         else
         {
@@ -159,7 +160,7 @@ public class RamailoGamesApiHandler : MonoBehaviour
 
     internal static void SubmitScore(float playtime)
     {
-        ScoreAPI.SubmitScore(currentScore, (int)playtime, (bool s, string msg) => { });
+        ScoreAPI.SubmitScore(currentScore, (int)playtime,0, (bool s, string msg) => { });
         Debug.Log("scoreSumbitted");
     }
 
