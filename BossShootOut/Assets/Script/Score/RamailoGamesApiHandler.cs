@@ -108,6 +108,7 @@ public class RamailoGamesApiHandler : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         //Determine Tournament or not
+        //myUrl = "http://localhost:61669/tournament/8/play/122/user/userhashvalue";
 
         string parentURL = GetParentURL();
         Debug.Log("Parent URL: " + parentURL);
@@ -150,6 +151,36 @@ public class RamailoGamesApiHandler : MonoBehaviour
         }
 
 
+
+        int playerId = ExtractPlayId(myUrl);
+        Debug.Log(playerId);
+        ScoreAPI.instance.gameid = playerId;
+    }
+
+
+    public int ExtractPlayId(string url)
+    {
+        // Parse the URL
+        Uri uri = new Uri(url);
+
+        // Get the segments from the path
+        string[] segments = uri.AbsolutePath.Split('/');
+
+        // Find the index of "play" in the path
+        int playIndex = Array.IndexOf(segments, "play");
+
+        // Check if "play" is found and there is a segment after it
+        if (playIndex != -1 && playIndex < segments.Length - 1)
+        {
+            // Attempt to parse the next segment as an integer
+            if (int.TryParse(segments[playIndex + 1], out int playId))
+            {
+                return playId;
+            }
+        }
+
+        // Default value or error handling if parsing fails
+        return -1;
     }
 
     private void OnEnable()
