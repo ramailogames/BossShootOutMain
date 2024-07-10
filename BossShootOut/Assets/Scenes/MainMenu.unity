@@ -992,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &658503529
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2098,6 +2098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myUrl: 
   blockUI: {fileID: 658503528}
+  url: https://clients.redtailfox.co/sampanagames/license.txt
 --- !u!4 &1115332519
 Transform:
   m_ObjectHideFlags: 0
@@ -3140,9 +3141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScoreTxt: {fileID: 320109473}
-  currentScoreTxt_Gameover: {fileID: 320109473}
   highScoreTxt: {fileID: 243843019}
-  highScoreTxt_Gameover: {fileID: 320109473}
   currentScore: 0
   playedTime: 0
 --- !u!4 &1544859863

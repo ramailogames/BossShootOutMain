@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeHealth(float amount)
     {
-        FindObjectOfType<RamailoGamesScoreManager>().AddScore(1f);
+        //FindObjectOfType<RamailoGamesScoreManager>().AddScore(1f);
         AudioManagerCS.instance.Play("enemyhit");
         currentHealth -= amount;
         sr.material = white;
